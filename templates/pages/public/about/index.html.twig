@@ -1,0 +1,166 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block body %}
+  <main class="pt-16">
+    <section
+      class="hero-card relative flex min-h-[160px] flex-col justify-end overflow-hidden sm:min-h-[180px] md:min-h-[220px] lg:min-h-[260px] 2xl:min-h-[300px]">
+      <img src="{{asset('images/head_bg.jpg')}}" alt="" class="absolute inset-0 h-full w-full object-cover object-top" loading="lazy" />
+      <div class="absolute inset-0 bg-gradient-to-tr from-orange-500/80 via-orange-600/30 to-transparent"></div>
+      <div class="relative mx-auto w-full max-w-6xl px-6 py-7 text-white md:py-8 2xl:max-w-7xl">
+        <h2 class="text-2xl font-semibold leading-tight sm:text-3xl 2xl:text-4xl">About Us</h2>
+        <p class="mt-2 text-sm text-white/90 max-w-xl">The ultimate burger experience, crafted for your couch.</p>
+      </div>
+    </section>
+    <section id="about" class="overflow-hidden bg-white py-16 md:py-16" aria-labelledby="about-heading">
+      <div
+        class="grid grid-cols-1 items-center gap-10 px-6 md:grid-cols-2 md:gap-12 md:pl-[max(1.5rem,calc((100vw_-_72rem)/2_+_1.5rem))] 2xl:pl-[max(1.5rem,calc((100vw_-_80rem)/2_+_1.5rem))] md:pr-0">
+        <!-- Left column -->
+        <div class="max-w-xl">
+          <!--<span class="text-sm font-bold uppercase tracking-wider text-orange-500">About Us</span>-->
+
+          <h2 id="about-heading" class="mb-4 mt-2 text-3xl font-extrabold leading-tight text-slate-900 md:text-4xl">
+            Real Delicious Food Straight To Your Table
+          </h2>
+
+          <p class="mb-8 leading-relaxed text-slate-500">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+            Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.
+          </p>
+
+          <!-- Feature grid -->
+          <div
+            class="grid grid-cols-1 items-center gap-6 min-[480px]:grid-cols-2 md:grid-cols-[8rem_1fr] lg:grid-cols-2">
+            <figure>
+              <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=600&q=80"
+                alt="Chef cooking in a bright kitchen" class="h-52 w-full rounded-xl object-cover sm:h-56"
+                loading="lazy" />
+            </figure>
+
+            <ul class="space-y-3 text-sm font-medium text-slate-900">
+              <li class="flex items-center gap-3">
+                <svg class="h-5 w-5 shrink-0 text-orange-500" viewBox="0 0 20 20" fill="currentColor"
+                  aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.7-9.3a1 1 0 00-1.4-1.4L9 10.6 7.7 9.3a1 1 0 00-1.4 1.4l2 2a1 1 0 001.4 0l4-4z"
+                    clip-rule="evenodd" />
+                </svg>
+                Delicious &amp; Healthy Foods
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="h-5 w-5 shrink-0 text-orange-500" viewBox="0 0 20 20" fill="currentColor"
+                  aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.7-9.3a1 1 0 00-1.4-1.4L9 10.6 7.7 9.3a1 1 0 00-1.4 1.4l2 2a1 1 0 001.4 0l4-4z"
+                    clip-rule="evenodd" />
+                </svg>
+                Spacific Family &amp; Kids Zone
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="h-5 w-5 shrink-0 text-orange-500" viewBox="0 0 20 20" fill="currentColor"
+                  aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.7-9.3a1 1 0 00-1.4-1.4L9 10.6 7.7 9.3a1 1 0 00-1.4 1.4l2 2a1 1 0 001.4 0l4-4z"
+                    clip-rule="evenodd" />
+                </svg>
+                Best Price &amp; Offers
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="h-5 w-5 shrink-0 text-orange-500" viewBox="0 0 20 20" fill="currentColor"
+                  aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.7-9.3a1 1 0 00-1.4-1.4L9 10.6 7.7 9.3a1 1 0 00-1.4 1.4l2 2a1 1 0 001.4 0l4-4z"
+                    clip-rule="evenodd" />
+                </svg>
+                Made By Fresh Ingredients
+              </li>
+            </ul>
+          </div>
+
+          <!-- Action row -->
+          <div class="mt-8 flex flex-wrap items-center gap-6">
+            <a href="menu.html"
+              class="rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold uppercase text-white transition hover:bg-orange-600">
+              Order now
+            </a>
+
+            <div class="flex items-center gap-3">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80"
+                alt="Portrait of Md. Sojib Ahmed" class="h-12 w-12 rounded-full object-cover ring-2 ring-slate-100"
+                loading="lazy" />
+              <div class="leading-tight">
+                <p class="text-sm font-bold text-slate-900">MD.SOJIB AHMED</p>
+                <p class="text-xs text-slate-400">CEO of Barperghar Company</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right column -->
+        <div>
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80"
+            alt="Modern restaurant interior at night with customers seated at a table"
+            class="h-72 w-full rounded-3xl object-cover shadow-lg sm:h-96 md:h-[440px] md:rounded-3xl md:rounded-r-none md:rounded-l-full lg:h-[480px]"
+            loading="lazy" />
+        </div>
+      </div>
+    </section>
+    <section class="bg-white py-16 md:py-20" aria-labelledby="chef-heading">
+      <div class="mx-auto max-w-6xl px-6 2xl:max-w-7xl">
+        <!-- Header -->
+        <header class="mb-12 text-center">
+          <p class="mb-2 text-xs font-semibold uppercase tracking-wider text-orange-600">Meet our Experts</p>
+          <h2 id="chef-heading" class="text-3xl font-extrabold uppercase tracking-tight text-gray-900 md:text-4xl">
+            Our Best Chef
+          </h2>
+        </header>
+
+        <!-- Cards -->
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <!-- Card 1 -->
+          <article class="rounded-2xl bg-white text-center shadow-md shadow-slate-200/70">
+            <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=800&q=80"
+              alt="Smiling chef in a white coat behind a kitchen counter"
+              class="aspect-[4/3] w-full rounded-t-2xl bg-slate-100 object-cover" loading="lazy" />
+            <div class="px-4 pb-6 pt-4">
+              <h3 class="mb-1 text-lg font-bold uppercase tracking-wide text-gray-800">John Doe</h3>
+              <p class="text-sm text-gray-500">Sous Chef</p>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="rounded-2xl bg-white text-center shadow-md shadow-slate-200/70">
+            <img src="https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=800&q=80"
+              alt="Chef in a black uniform and tall white hat inside a restaurant"
+              class="aspect-[4/3] w-full rounded-t-2xl bg-slate-100 object-cover" loading="lazy" />
+            <div class="px-4 pb-6 pt-4">
+              <h3 class="mb-1 text-lg font-bold uppercase tracking-wide text-gray-800">John Doe</h3>
+              <p class="text-sm text-gray-500">Sous Chef</p>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="rounded-2xl bg-white text-center shadow-md shadow-slate-200/70">
+            <img src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?auto=format&fit=crop&w=800&q=80"
+              alt="Chef in a white uniform holding a plated dish outdoors"
+              class="aspect-[4/3] w-full rounded-t-2xl bg-slate-100 object-cover" loading="lazy" />
+            <div class="px-4 pb-6 pt-4">
+              <h3 class="mb-1 text-lg font-bold uppercase tracking-wide text-gray-800">John Doe</h3>
+              <p class="text-sm text-gray-500">Sous Chef</p>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="rounded-2xl bg-white text-center shadow-md shadow-slate-200/70">
+            <img src="https://images.unsplash.com/photo-1595273670150-bd0c3c392e46?auto=format&fit=crop&w=800&q=80"
+              alt="Smiling female chef in a blue patterned apron"
+              class="aspect-[4/3] w-full rounded-t-2xl bg-slate-100 object-cover" loading="lazy" />
+            <div class="px-4 pb-6 pt-4">
+              <h3 class="mb-1 text-lg font-bold uppercase tracking-wide text-gray-800">John Doe</h3>
+              <p class="text-sm text-gray-500">Sous Chef</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock %}

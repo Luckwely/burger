@@ -1,0 +1,304 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block body %}
+
+    <section
+        id="home"
+        class="relative mx-auto w-full max-w-[2000px] overflow-hidden bg-[#fcf6f5] pb-16 md:h-screen md:min-h-[620px] md:max-h-[900px] md:pb-0"
+    >
+        <svg class="absolute inset-0 h-full w-full" viewBox="0 0 1424 745" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+                <linearGradient id="pinkFade" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0" stop-color="#f6d4d7"/>
+                    <stop offset="0.5" stop-color="#f8dcde"/>
+                    <stop offset="0.88" stop-color="#ffffff"/>
+                </linearGradient>
+            </defs>
+
+            <rect width="1424" height="745" fill="url(#pinkFade)"/>
+
+            <path
+                fill="#ffffff"
+                d="M0,612
+                C35,627.5 77.5,643.5 120,655.6
+                C162.5,667.8 205,676 240,676
+                C310,676 360,650 430,615
+                C500,580 570,535 650,502
+                C720,474 800,462 880,466
+                C960,470 1180,485 1424,505
+                V745 H0 Z"
+            />
+
+            <path
+                fill="#f4a08b"
+                d="M120,655.6
+                C162.5,667.8 205,676 240,676
+                C310,676 360,650 430,615
+                C500,580 570,535 650,502
+                C720,474 800,462 880,466
+                C800,462 720,497 650,526
+                C570,559 500,604 430,639
+                C360,674 310,700 240,700
+                C205,700 162.5,667.8 120,655.6 Z"
+            />
+        </svg>
+
+        <div class="relative pt-20 md:absolute md:inset-0 md:pt-0">
+            <div class="relative mx-auto h-full max-w-6xl px-6 2xl:max-w-7xl">
+                <div class="relative z-20 pt-6 md:absolute md:left-6 md:top-[22%] md:pt-0">
+                    <h1
+                        class="text-[2.2rem] font-extrabold uppercase leading-[1.15] tracking-tight sm:text-5xl md:text-[clamp(2.5rem,3.8vw,3.75rem)]"
+                    >
+                        Enjoy
+                        <br/>
+                        <span class="text-[#f4511e]">BurgerGhar</span><br/>
+                        Make your<br/>
+                        Tummy happy
+                    </h1>
+
+                    <div class="mt-6 flex flex-wrap items-center gap-5 md:mt-[11%]">
+                        <a
+                            href="menu.html"
+                            class="rounded-full bg-[#e5c242] px-6 py-3 text-xs font-semibold text-[#1d1b20] shadow transition hover:bg-[#d8b32f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1d1b20]"
+                        >
+                            Find our Best Foods
+                        </a>
+                        <a href="menu.html" class="group flex items-center gap-3 text-xs font-medium">
+                            <span
+                                class="grid h-12 w-12 place-items-center rounded-full bg-[#f4511e] text-white shadow-md transition group-hover:scale-105"
+                            >
+                                <svg class="ml-0.5 h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M7 4.5v15l13-7.5z"/>
+                                </svg>
+                            </span>
+                            How to order
+                        </a>
+                    </div>
+                </div>
+
+                <div
+                    class="relative z-10 ml-auto mt-10 aspect-square w-[72%] max-w-[420px] rounded-full bg-[#fffaf0] p-[0.5%] shadow-[0_2.5vw_4vw_-1vw_rgba(120,80,60,0.28)] md:absolute md:right-6 md:top-[19.3%] md:mx-0 md:mt-0 md:w-[37.5%] md:max-w-none"
+                >
+                    <div class="relative flex h-full w-full items-center justify-center rounded-full bg-[#f8d21a]">
+                        <div
+                            class="pointer-events-none absolute inset-[4.2%] rounded-full border border-dashed border-[#3b3220]/70 min-[480px]:border-[1.5px] lg:border-2"
+                        >
+                        </div>
+
+                        <div
+                            class="[-webkit-mask-image:linear-gradient(#000,#000),radial-gradient(ellipse_25%_33.333%_at_50%_66.667%,#000_99.4%,transparent_100%)] [mask-image:linear-gradient(#000,#000),radial-gradient(ellipse_25%_33.333%_at_50%_66.667%,#000_99.4%,transparent_100%)] [-webkit-mask-size:100%_90%,100%_100%] [mask-size:100%_90%,100%_100%] [-webkit-mask-repeat:no-repeat] [mask-repeat:no-repeat] [-webkit-mask-position:top,center] [mask-position:top,center] pointer-events-none absolute inset-x-[-50%] bottom-0 top-[-50%]"
+                        >
+                            <img
+                                src="{{ asset('images/hero.png') }}"
+                                alt="Smiling woman holding two burgers"
+                                class="absolute bottom-[-1.333%] left-[53%] h-[80%] w-auto max-w-none -translate-x-1/2 object-contain"
+                                onerror="this.style.display = 'none'"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu-of-the-day" class="mx-auto max-w-6xl px-6 py-16 2xl:max-w-7xl" aria-labelledby="menu-heading">
+        <header class="mx-auto mb-14 max-w-md text-center md:mb-20">
+            <h2 id="menu-heading" class="text-3xl font-bold text-slate-900 md:text-4xl">Menu of the Day</h2>
+            <p class="mt-4 text-xs leading-relaxed text-slate-400 md:text-sm">Our most loved picks today. Tap “See more” for
+                ingredients, or browse everything by category.</p>
+        </header>
+        <ul id="daily-menu" class="grid grid-cols-1 gap-x-10 gap-y-12 md:grid-cols-2 md:gap-y-16 lg:gap-x-24"></ul>
+        <div class="mt-14 text-center">
+            <a
+                href="menu.html"
+                class="inline-flex items-center gap-2 rounded-full bg-[#f4511e] px-8 py-3.5 text-sm font-semibold text-white shadow-md transition hover:bg-[#d9400f]"
+            >View
+                full menu <span aria-hidden="true">&rarr;</span></a>
+        </div>
+    </section>
+
+    <section class="relative overflow-hidden bg-white py-8 md:py-12" aria-labelledby="promo-heading">
+        <!-- Faded, blurred restaurant background (far right, desktop only) -->
+        <div class="absolute inset-y-0 right-0 hidden w-1/2 md:block" aria-hidden="true">
+            <img
+                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80"
+                alt=""
+                class="h-full w-full object-cover opacity-70"
+            />
+            <div class="absolute inset-0 bg-gradient-to-r from-white via-white/70 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white"></div>
+        </div>
+
+        <!-- Yellow curved panel -->
+        <div class="relative z-10 rounded-b-[80px] bg-amber-400 md:w-[90%] md:rounded-b-none md:rounded-r-full lg:w-[82%]">
+            <div
+                class="grid grid-cols-1 items-center gap-12 px-6 py-14 sm:px-10 md:grid-cols-[minmax(0,1fr)_auto] md:gap-8 md:py-20 md:pl-[max(1.5rem,calc((100vw_-_72rem)/2_+_1.5rem))] 2xl:pl-[max(1.5rem,calc((100vw_-_80rem)/2_+_1.5rem))] md:pr-12 lg:pr-16"
+            >
+                <!-- Left: content -->
+                <div class="max-w-md">
+                    <h2 id="promo-heading" class="text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl">
+                        The Caferio Have Excellent Of Quality Burgers!
+                    </h2>
+
+                    <p class="mt-5 text-sm leading-relaxed text-slate-700">
+                        Competently brand dynamic process improvements whereas multimedia based imperatives.
+                        Objectively create sticky models with multifunctional imperatives. Enthusiastically
+                        harness resource maximizing process
+                    </p>
+
+                    <a
+                        href=""
+                        class="mt-8 inline-block rounded-full bg-red-500 px-7 py-3 text-xs font-semibold text-white shadow-sm transition hover:bg-red-600"
+                    >
+                        Order Now
+                    </a>
+                </div>
+
+                <!-- Right: circular image + promo badge -->
+                <div class="flex justify-center md:justify-end">
+                    <div class="relative">
+                        <div
+                            class="h-64 w-64 overflow-hidden rounded-full border-[6px] border-white shadow-xl sm:h-72 sm:w-72 md:h-56 md:w-56 lg:h-72 lg:w-72 xl:h-[22rem] xl:w-[22rem]"
+                        >
+                            <img
+                                src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80"
+                                alt="Close-up of a gourmet multi-layered beef burger on a wooden platter"
+                                class="h-full w-full object-cover"
+                                loading="lazy"
+                            />
+                        </div>
+
+                        <!-- Promo badge -->
+                        <div
+                            class="absolute -right-2 top-[58%] flex h-28 w-28 -translate-y-1/2 flex-col items-center justify-center rounded-full bg-red-500 text-center text-white shadow-lg sm:-right-6 sm:h-32 sm:w-32"
+                        >
+                            <span
+                                class="absolute inset-1.5 rounded-full border-2 border-dashed border-white/50"
+                                aria-hidden="true"
+                            ></span>
+                            <span class="text-[10px] font-semibold leading-none sm:text-xs">Get Up To</span>
+                            <span class="my-1 text-3xl font-extrabold leading-none sm:text-4xl">35%</span>
+                            <span
+                                class="rounded-sm bg-amber-400 px-2 py-0.5 text-[9px] font-bold leading-none text-slate-900 sm:text-[10px]"
+                            >Off
+                                Now</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-[#FAF6F0] py-16 md:py-20" aria-labelledby="testimonials-heading">
+        <div class="mx-auto max-w-6xl px-6 2xl:max-w-7xl">
+            <!-- Header -->
+            <header class="mx-auto mb-16 max-w-2xl text-center">
+                <h2 id="testimonials-heading" class="text-3xl font-extrabold text-gray-900 md:text-4xl">
+                    Our <span class="text-[#E0533C]">Satisfied</span> Customers
+                </h2>
+                <p class="mt-4 text-sm font-medium leading-relaxed text-gray-600 md:text-base">
+                    Quickly morph functional information via cost effective ideas. Efficiently strategize resource maximizing
+                    resources before functionalized.
+                </p>
+            </header>
+
+            <!-- Cards -->
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8">
+                <!-- Card 1 -->
+                <figure class="flex flex-col items-center rounded-xl bg-white p-6 text-center shadow-sm lg:p-8">
+                    <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-gray-100" aria-hidden="true">
+                        <span class="translate-y-[5px] font-serif text-3xl leading-none text-[#E0533C]">&ldquo;</span>
+                    </div>
+                    <blockquote class="mb-6 max-w-xs text-sm leading-relaxed text-gray-600">
+                        Progressively orchestrate just in time methods of empowerment before plug &amp; play communities. Compelling
+                        monetize sustainable core competencies.
+                    </blockquote>
+                    <img
+                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80"
+                        alt="Portrait of Liam Irvines"
+                        class="mb-4 h-16 w-16 rounded-full border border-gray-100 bg-gray-100 object-cover"
+                        loading="lazy"
+                    />
+                    <figcaption>
+                        <p class="text-base font-bold text-gray-800">Liam Irvines</p>
+                        <p class="mt-1 text-xs tracking-wide text-[#E0533C]">New York</p>
+                    </figcaption>
+                </figure>
+
+                <!-- Card 2 -->
+                <figure class="flex flex-col items-center rounded-xl bg-white p-6 text-center shadow-sm lg:p-8">
+                    <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-gray-100" aria-hidden="true">
+                        <span class="translate-y-[5px] font-serif text-3xl leading-none text-[#E0533C]">&ldquo;</span>
+                    </div>
+                    <blockquote class="mb-6 max-w-xs text-sm leading-relaxed text-gray-600">
+                        Progressively orchestrate just in time methods of empowerment before plug &amp; play communities. Compelling
+                        monetize sustainable core competencies.
+                    </blockquote>
+                    <img
+                        src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80"
+                        alt="Portrait of Diana Leslie"
+                        class="mb-4 h-16 w-16 rounded-full border border-gray-100 bg-gray-100 object-cover"
+                        loading="lazy"
+                    />
+                    <figcaption>
+                        <p class="text-base font-bold text-gray-800">Diana Leslie</p>
+                        <p class="mt-1 text-xs tracking-wide text-[#E0533C]">New York</p>
+                    </figcaption>
+                </figure>
+
+                <!-- Card 3 -->
+                <figure class="flex flex-col items-center rounded-xl bg-white p-6 text-center shadow-sm lg:p-8">
+                    <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-gray-100" aria-hidden="true">
+                        <span class="translate-y-[5px] font-serif text-3xl leading-none text-[#E0533C]">&ldquo;</span>
+                    </div>
+                    <blockquote class="mb-6 max-w-xs text-sm leading-relaxed text-gray-600">
+                        Progressively orchestrate just in time methods of empowerment before plug &amp; play communities. Compelling
+                        monetize sustainable core competencies.
+                    </blockquote>
+                    <img
+                        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80"
+                        alt="Portrait of Tania Vandy"
+                        class="mb-4 h-16 w-16 rounded-full border border-gray-100 bg-gray-100 object-cover"
+                        loading="lazy"
+                    />
+                    <figcaption>
+                        <p class="text-base font-bold text-gray-800">Tania Vandy</p>
+                        <p class="mt-1 text-xs tracking-wide text-[#E0533C]">New York</p>
+                    </figcaption>
+                </figure>
+            </div>
+
+            <!-- Pagination dots (extra invisible padding makes them easy to tap) -->
+            <div class="mt-12 flex items-center justify-center gap-3" role="tablist" aria-label="Testimonial pages">
+                <button
+                    type="button"
+                    role="tab"
+                    aria-selected="true"
+                    aria-label="Slide 1"
+                    class="relative h-2.5 w-2.5 rounded-full bg-[#E0533C] after:absolute after:-inset-2 after:content-['']"
+                ></button>
+                <button
+                    type="button"
+                    role="tab"
+                    aria-selected="false"
+                    aria-label="Slide 2"
+                    class="relative h-1.5 w-1.5 rounded-full bg-gray-300 transition hover:bg-gray-400 after:absolute after:-inset-2 after:content-['']"
+                ></button>
+                <button
+                    type="button"
+                    role="tab"
+                    aria-selected="false"
+                    aria-label="Slide 3"
+                    class="relative h-1.5 w-1.5 rounded-full bg-gray-300 transition hover:bg-gray-400 after:absolute after:-inset-2 after:content-['']"
+                ></button>
+                <button
+                    type="button"
+                    role="tab"
+                    aria-selected="false"
+                    aria-label="Slide 4"
+                    class="relative h-1.5 w-1.5 rounded-full bg-gray-300 transition hover:bg-gray-400 after:absolute after:-inset-2 after:content-['']"
+                ></button>
+            </div>
+        </div>
+    </section>
+{% endblock %}

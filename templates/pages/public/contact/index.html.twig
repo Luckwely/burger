@@ -1,0 +1,113 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block body %}
+  <main class="pt-16">
+    <section
+      class="hero-card relative flex min-h-[160px] flex-col justify-end overflow-hidden sm:min-h-[180px] md:min-h-[220px] lg:min-h-[260px] 2xl:min-h-[300px]">
+      <img src="{{asset('images/head_bg.jpg')}}" alt="" class="absolute inset-0 h-full w-full object-cover object-top" loading="lazy" />
+      <div class="absolute inset-0 bg-gradient-to-tr from-orange-500/80 via-orange-600/30 to-transparent"></div>
+      <div class="relative mx-auto w-full max-w-6xl px-6 py-7 text-white md:py-8 2xl:max-w-7xl">
+        <h2 class="text-2xl font-semibold leading-tight sm:text-3xl 2xl:text-4xl">Contact Us</h2>
+        <p class="mt-2 text-sm text-white/90 max-w-xl">The ultimate burger experience, crafted for your couch.</p>
+      </div>
+    </section>
+    <section id="contact-us" class="mx-auto max-w-6xl px-6 py-10 md:py-14 2xl:max-w-7xl" aria-labelledby="contact-heading">
+
+      <header class="grid md:grid-cols-2 gap-6 items-end mb-8">
+        <div>
+          <!-- <p class="text-sm font-bold uppercase tracking-wider text-orange-500">Contact Us</p> -->
+          <h2 id="contact-heading" class="mt-2 text-3xl md:text-4xl font-semibold tracking-tight text-[#1d1b20]">Get in
+            touch with us</h2>
+        </div>
+        <p class="text-sm md:max-w-sm md:ml-auto leading-relaxed">Helping businesses overcome complexity, achieve
+          growth, and transform with expert guidance.</p>
+      </header>
+
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <!-- Left: direct contact card -->
+        <section
+          class="hero-card relative overflow-hidden rounded-3xl min-h-[380px] md:min-h-[460px] flex flex-col justify-end">
+          <img src="https://images.unsplash.com/photo-1766066014237-00645c74e9c6?auto=format&fit=crop&w=1200&q=80"
+            alt="" class="absolute inset-0 h-full w-full object-cover object-top" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-tr from-orange-500/80 via-orange-600/30 to-transparent"></div>
+          <div class="relative p-7 md:p-8 text-white">
+            <h2 class="text-2xl md:text-3xl font-semibold leading-tight">Prefer to Talk to Us Directly?</h2>
+            <p class="mt-2 text-sm text-white/90 max-w-xs">Get instant support from our team for urgent inquiries or
+              quick questions.</p>
+            <a href="tel:+000000000"
+              class="btn mt-5 inline-flex items-center gap-2 rounded-full bg-white text-gray-900 px-6 py-3 text-sm font-medium hover:bg-gray-100 transition-colors">
+              Call Us Now
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+          </div>
+        </section>
+
+        <!-- Right: form -->
+        <section class="rounded-3xl bg-[#faf6f0] p-6 md:p-8">
+          <form id="contact-form" class="space-y-5" novalidate>
+            <div>
+              <label for="name" class="block text-xs font-medium mb-2">Full Name</label>
+              <div class="relative">
+                <svg class="pointer-events-none text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" width="16"
+                  height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="8" r="4" />
+                  <path d="M4 21c0-4 4-6 8-6s8 2 8 6" />
+                </svg>
+                <input id="name" name="name" type="text" required placeholder="Enter your name"
+                  class="w-full rounded-xl border border-[#e5e0d8] bg-white py-3 pr-4 text-sm outline-none transition focus:border-[#f4511e] focus:ring-[3px] focus:ring-[#f4511e]/15 aria-[invalid=true]:border-red-600 pl-10">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="email" class="block text-xs font-medium mb-2">Email</label>
+                <div class="relative">
+                  <svg class="pointer-events-none text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" width="16"
+                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="5" width="18" height="14" rx="2" />
+                    <path d="m3 7 9 6 9-6" />
+                  </svg>
+                  <input id="email" name="email" type="email" required placeholder="Enter your email"
+                    class="w-full rounded-xl border border-[#e5e0d8] bg-white py-3 pr-4 text-sm outline-none transition focus:border-[#f4511e] focus:ring-[3px] focus:ring-[#f4511e]/15 aria-[invalid=true]:border-red-600 pl-10">
+                </div>
+              </div>
+              <div>
+                <label for="phone" class="block text-xs font-medium mb-2">Phone</label>
+                <div class="relative">
+                  <svg class="pointer-events-none text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" width="16"
+                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path
+                      d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z" />
+                  </svg>
+                  <input id="phone" name="phone" type="tel" placeholder="Enter your number"
+                    class="w-full rounded-xl border border-[#e5e0d8] bg-white py-3 pr-4 text-sm outline-none transition focus:border-[#f4511e] focus:ring-[3px] focus:ring-[#f4511e]/15 aria-[invalid=true]:border-red-600 pl-10">
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <label for="message" class="block text-xs font-medium mb-2">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Enter your message"
+                class="w-full rounded-xl border border-[#e5e0d8] bg-white py-3 pr-4 text-sm outline-none transition focus:border-[#f4511e] focus:ring-[3px] focus:ring-[#f4511e]/15 aria-[invalid=true]:border-red-600 resize-none pl-4"></textarea>
+            </div>
+
+            <div class="flex items-center gap-4 pt-1 w-auto">
+              <button type="submit"
+                class="btn inline-flex  items-center gap-2 rounded-full bg-[#f4511e] px-5 py-3 text-xs font-semibold text-white shadow-md transition hover:bg-[#d9400f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f4511e] sm:inline-block">
+                Send Message
+              </button>
+              <p id="status" class="text-sm" role="status" aria-live="polite"></p>
+            </div>
+          </form>
+        </section>
+      </div>
+    </section>
+  </main>
+{% endblock %}

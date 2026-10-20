@@ -1,0 +1,169 @@
+<header
+    id="site-header"
+    data-scrolled="false"
+    data-solid="false"
+    class="group fixed inset-x-0 top-0 z-50 transition-all duration-300 data-[scrolled=true]:bg-white/90 data-[scrolled=true]:shadow-md data-[scrolled=true]:backdrop-blur"
+>
+    <div
+        class="mx-auto flex max-w-6xl items-center justify-between gap-3 px-6 py-5 2xl:max-w-7xl transition-all duration-300 md:py-[1.6vw] group-data-[scrolled=true]:!py-3"
+    >
+        <a
+            href="{{ path('app_home') }}"
+            class="flex shrink-0 items-center gap-1 text-sm font-bold tracking-tight min-[360px]:text-base md:text-lg"
+        >
+            BURGER<span aria-hidden="true" class="text-xl">🍔</span>GHAR
+        </a>
+
+        <nav class="hidden items-center gap-4 text-sm font-medium md:flex lg:gap-8" aria-label="Main">
+            <a
+                href="{{ path('app_home') }}"
+                data-nav="home"
+                aria-current="page"
+                class="text-[#f4511e] transition hover:text-[#f4511e]"
+            >Home</a>
+            <a href="{{ path('app_about') }}" data-nav="about" class="transition hover:text-[#f4511e]">About Us</a>
+            <a href="{{ path('app_menu') }}" data-nav="menu" class="transition hover:text-[#f4511e]">Menu</a>
+            <a href="{{ path('app_contact') }}" data-nav="contact" class="transition hover:text-[#f4511e]">Contact Us</a>
+        </nav>
+
+        <div class="flex items-center gap-2 sm:gap-3">
+            <a
+                href="{{ path('app_favoris') }}"
+                aria-label="Favorites"
+                class="relative grid h-10 w-10 place-items-center rounded-full bg-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#f4511e]"
+            >
+                <span
+                    id="like-count"
+                    class="absolute -right-1 -top-1 hidden h-5 min-w-5 items-center justify-center rounded-full bg-[#f4511e] px-1 text-[10px] font-bold leading-none text-white"
+                    aria-live="polite"
+                >0</span>
+                <svg
+                    class="h-4 w-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                >
+                    <path
+                        d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"
+                    />
+                </svg>
+            </a>
+            <a
+                href="{{ path('app_cart') }}"
+                aria-label="Cart"
+                class="relative hidden h-10 w-10 place-items-center rounded-full bg-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#f4511e] min-[480px]:grid"
+            >
+                <span
+                    id="cart-count"
+                    class="absolute -right-1 -top-1 hidden h-5 min-w-5 items-center justify-center rounded-full bg-[#f4511e] px-1 text-[10px] font-bold leading-none text-white"
+                    aria-live="polite"
+                >0</span>
+                <svg
+                    class="h-4 w-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M3 4h2l2.4 11h10.2L20 7H6"/>
+                    <circle cx="9" cy="19" r="1.2"/>
+                    <circle cx="17" cy="19" r="1.2"/>
+                </svg>
+            </a>
+
+            <a
+                href="{{ path('app_login') }}"
+                class="hidden px-2 py-3 text-xs font-semibold transition hover:text-[#f4511e] sm:inline-block"
+            >Login</a>
+            <a
+                href="{{ path('app_register') }}"
+                class="hidden rounded-full bg-[#f4511e] px-5 py-3 text-xs font-semibold text-white shadow-md transition hover:bg-[#d9400f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f4511e] sm:inline-block"
+            >Register</a>
+
+            <!-- Hamburger -->
+            <button
+                id="menu-toggle"
+                type="button"
+                aria-label="Toggle menu"
+                aria-expanded="false"
+                aria-controls="mobile-nav"
+                class="grid h-10 w-10 place-items-center rounded-full bg-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#f4511e] md:hidden"
+            >
+                <svg
+                    class="h-5 w-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                >
+                    <path d="M4 7h16M4 12h16M4 17h16"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile menu panel -->
+    <nav
+        id="mobile-nav"
+        aria-label="Mobile"
+        class="absolute inset-x-6 top-full hidden rounded-2xl bg-white p-4 text-sm font-medium shadow-lg md:hidden"
+    >
+        <a
+            href="{{ path('app_home') }}"
+            data-nav="home"
+            aria-current="page"
+            class="text-[#f4511e] block rounded-lg px-3 py-2.5 hover:bg-slate-50"
+        >Home</a>
+        <a href="{{ path('app_about') }}" data-nav="about" class="block rounded-lg px-3 py-2.5 hover:bg-slate-50">About Us</a>
+        <a href="{{ path('app_menu') }}" data-nav="menu" class="block rounded-lg px-3 py-2.5 hover:bg-slate-50">Menu</a>
+        <a href="{{ path('app_contact') }}" data-nav="contact" class="block rounded-lg px-3 py-2.5 hover:bg-slate-50">Contact Us</a>
+        <a href="{{ path('app_favoris') }}" class="block rounded-lg px-3 py-2.5 hover:bg-slate-50">Favorites</a>
+        <a href="{{ path('app_cart') }}" class="block rounded-lg px-3 py-2.5 hover:bg-slate-50">Cart</a>
+        <a href="{{ path('app_contact') }}" class="block rounded-lg px-3 py-2.5 hover:bg-slate-50">Login</a>
+        <a href="{{ path('app_register') }}" class="block rounded-lg px-3 py-2.5 hover:bg-slate-50">Register</a>
+        <a
+            href="{{ path('app_menu') }}"
+            class="mt-2 block rounded-full bg-[#f4511e] px-5 py-3 text-center text-xs font-semibold text-white sm:hidden"
+        >
+            Order Now
+        </a>
+    </nav>
+</header>
+
+<script>
+
+    (() => {
+        const header = document.getElementById("site-header");
+        const toggle = document.getElementById("menu-toggle");
+        const mobileNav = document.getElementById("mobile-nav");
+        if (!header || !toggle || !mobileNav) return;
+
+        const solid = header.dataset.solid === "true";
+        const update = () => {
+            header.dataset.scrolled = String(solid || window.scrollY > 10);
+        };
+        update();
+        window.addEventListener("scroll", update, { passive: true });
+
+        // Mobile menu
+        const close = () => {
+            mobileNav.classList.add("hidden");
+            toggle.setAttribute("aria-expanded", "false");
+        };
+        toggle.addEventListener("click", () => {
+            const open = mobileNav.classList.toggle("hidden") === false;
+            toggle.setAttribute("aria-expanded", String(open));
+        });
+        mobileNav
+            .querySelectorAll("a")
+            .forEach((a) => a.addEventListener("click", close));
+        document.addEventListener("keydown", (e) => e.key === "Escape" && close());
+    })();
+</script>

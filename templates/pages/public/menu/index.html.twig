@@ -1,0 +1,284 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block body %}
+  <main class="pt-16">
+    <section
+      class="hero-card relative flex min-h-[160px] flex-col justify-end overflow-hidden sm:min-h-[180px] md:min-h-[220px] lg:min-h-[260px] 2xl:min-h-[300px]">
+      <img src="{{asset('images/head_bg.jpg')}}" alt="" class="absolute inset-0 h-full w-full object-cover object-top" loading="lazy" />
+      <div class="absolute inset-0 bg-gradient-to-tr from-orange-500/80 via-orange-600/30 to-transparent"></div>
+      <div class="relative mx-auto w-full max-w-6xl px-6 py-7 text-white md:py-8 2xl:max-w-7xl">
+        <h2 class="text-2xl font-semibold leading-tight sm:text-3xl 2xl:text-4xl">Our Menu</h2>
+        <p class="mt-2 text-sm text-white/90 max-w-xl">The ultimate burger experience, crafted for your couch.</p>
+      </div>
+    </section>
+    <section class="mx-auto max-w-6xl px-6 pb-16 sm:pb-20 2xl:max-w-7xl" aria-labelledby="menu-title">
+      <div class="flex flex-col gap-6 py-8 lg:flex-row lg:gap-8">
+
+        <!-- Sidebar -->
+        <aside class="w-full space-y-4 lg:w-64 lg:shrink-0 xl:w-72">
+
+          <div class="rounded-xl border border-gray-100 bg-white p-5 shadow-sm">
+            <h3 class="mb-3 text-sm font-semibold">Browse Menu</h3>
+            <div class="relative">
+              <input id="menu-search" type="search" aria-label="Search the menu" placeholder="Search Here..."
+                class="w-full rounded-lg border border-gray-200 py-2 pl-3 pr-9 text-xs outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100" />
+              <svg class="absolute right-3 top-2.5 h-4 w-4 text-gray-400" fill="none" stroke="currentColor"
+                stroke-width="2" viewBox="0 0 24 24">
+                <circle cx="11" cy="11" r="7" />
+                <path d="m20 20-3.5-3.5" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="rounded-xl border border-gray-100 bg-white p-5 shadow-sm">
+            <h3 class="mb-3 text-sm font-semibold">All Categories</h3>
+            <div id="cat-tabs" class="flex flex-wrap gap-2"></div>
+          </div>
+
+          <div class="rounded-xl border border-gray-100 bg-white p-5 shadow-sm">
+            <h3 class="mb-4 text-sm font-semibold">Price Range</h3>
+            <input type="range" min="0" max="5000" value="500" class="w-full" aria-label="Maximum price" />
+            <p class="mt-2 text-xs text-gray-500">Up to <span class="font-semibold text-blue-600">$500</span></p>
+          </div>
+
+          <div class="rounded-xl border border-gray-100 bg-white p-5 shadow-sm">
+            <h3 class="mb-3 text-sm font-semibold">Filter by Price</h3>
+            <div class="space-y-2 text-xs text-gray-500">
+              <label class="flex cursor-pointer items-center gap-2"><input type="checkbox"
+                  class="h-3.5 w-3.5 rounded border-gray-300 text-blue-600" />$10.00 - $100.00 (150)</label>
+              <label class="flex cursor-pointer items-center gap-2"><input type="checkbox"
+                  class="h-3.5 w-3.5 rounded border-gray-300 text-blue-600" />$100.00 - $500.00 (717)</label>
+              <label class="flex cursor-pointer items-center gap-2"><input type="checkbox"
+                  class="h-3.5 w-3.5 rounded border-gray-300 text-blue-600" />$500.00 - $1,000.00 (688)</label>
+              <label class="flex cursor-pointer items-center gap-2"><input type="checkbox"
+                  class="h-3.5 w-3.5 rounded border-gray-300 text-blue-600" />$1,000.00 - $5,000.00 (901)</label>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main -->
+        <div class="w-full min-w-0 lg:flex-1">
+
+          <div
+            class="mb-6 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-gray-100 bg-white px-4 py-3 shadow-sm">
+            <div class="flex items-center gap-4 text-xs text-gray-500">
+              <label class="flex items-center gap-2">Sort by:
+                <select
+                  class="rounded-md border border-gray-200 bg-white px-2 py-1.5 text-xs text-gray-700 outline-none focus:border-blue-500">
+                  <option>Oldest</option>
+                  <option>Newest</option>
+                </select>
+              </label>
+              <span>Showing 1 - 12 results</span>
+            </div>
+            
+          </div>
+
+          <div class="grid grid-cols-1 gap-4 min-[480px]:grid-cols-2 min-[480px]:gap-5 md:gap-6 lg:grid-cols-3">
+
+            <!-- 1 Xiaomi Mi Band 5 -->
+            <article
+              class="relative flex flex-col items-center justify-between rounded-xl border border-gray-100 bg-white p-6 text-center shadow-sm transition hover:shadow-md">
+              <div class="mb-4 flex h-44 w-full items-center justify-center rounded-lg bg-gray-50">
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=400&q=80"
+                  alt="Chicken Burger"
+                  class="h-20 w-20 shrink-0 rounded-full bg-slate-100 object-cover sm:h-24 sm:w-24 lg:h-28 lg:w-28"
+                  loading="lazy" />
+              </div>
+              <div class="w-full text-left">
+                <p class="text-xs text-gray-400">Wearables</p>
+                <h4 class="mt-1 text-sm font-bold text-gray-900">Xiaomi Mi Band 5</h4>
+                <div class="mt-1.5 flex items-center text-xs"><span class="text-amber-400">★★★★</span><span
+                    class="text-gray-200">★</span><span class="ml-1.5 text-[11px] text-gray-500">4.5 (6 reviews)</span>
+                </div>
+                <div class="mt-2"><span class="text-base font-bold text-blue-600">$189.00</span></div>
+              </div>
+            </article>
+
+            <!-- 2 Bluetooth Speaker -30% -->
+            <article
+              class="relative flex flex-col items-center justify-between rounded-xl border border-gray-100 bg-white p-6 text-center shadow-sm transition hover:shadow-md">
+              <span
+                class="absolute left-3 top-3 rounded bg-green-500 px-2 py-0.5 text-[10px] font-bold text-white">-30%</span>
+              <div class="mb-4 flex h-44 w-full items-center justify-center rounded-lg bg-gray-50">
+                <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=400&q=80"
+                  alt="Regular Beef Burger"
+                  class="h-20 w-20 shrink-0 rounded-full bg-slate-100 object-cover sm:h-24 sm:w-24 lg:h-28 lg:w-28"
+                  loading="lazy" />
+              </div>
+              <div class="w-full text-left">
+                <p class="text-xs text-gray-400">Speakers</p>
+                <h4 class="mt-1 text-sm font-bold text-gray-900">Bluetooth Speaker</h4>
+                <div class="mt-1.5 flex items-center text-xs"><span class="text-amber-400">★★★★</span><span
+                    class="text-gray-200">★</span><span class="ml-1.5 text-[11px] text-gray-500">4.5 (8 reviews)</span>
+                </div>
+                <div class="mt-2 flex items-baseline gap-2"><span
+                    class="text-base font-bold text-blue-600">$275.00</span><span
+                    class="text-xs text-gray-400 line-through">$320.00</span></div>
+              </div>
+            </article>
+
+            <!-- 3 WiFi Security Camera NEW -->
+            <article
+              class="relative flex flex-col items-center justify-between rounded-xl border border-gray-100 bg-white p-6 text-center shadow-sm transition hover:shadow-md">
+              <span
+                class="absolute left-3 top-3 rounded bg-blue-600 px-2 py-0.5 text-[10px] font-bold text-white">NEW</span>
+              <div class="mb-4 flex h-44 w-full items-center justify-center rounded-lg bg-gray-50">
+                <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=400&q=80"
+                  alt="Crispy Chicken"
+                  class="h-20 w-20 shrink-0 rounded-full bg-slate-100 object-cover sm:h-24 sm:w-24 lg:h-28 lg:w-28"
+                  loading="lazy" />
+              </div>
+              <div class="w-full text-left">
+                <p class="text-xs text-gray-400">Cameras</p>
+                <h4 class="mt-1 text-sm font-bold text-gray-900">WiFi Security Camera</h4>
+                <div class="mt-1.5 flex items-center text-xs"><span class="text-amber-400">★★★★</span><span
+                    class="text-gray-200">★</span><span class="ml-1.5 text-[11px] text-gray-500">4.0 (12 reviews)</span>
+                </div>
+                <div class="mt-2"><span class="text-base font-bold text-blue-600">$199.00</span></div>
+              </div>
+            </article>
+
+            <!-- 4 Iphone 8x plus NEW -->
+            <article
+              class="relative flex flex-col items-center justify-between rounded-xl border border-gray-100 bg-white p-6 text-center shadow-sm transition hover:shadow-md">
+              <span
+                class="absolute left-3 top-3 rounded bg-blue-600 px-2 py-0.5 text-[10px] font-bold text-white">NEW</span>
+              <div class="mb-4 flex h-44 w-full items-center justify-center rounded-lg bg-gray-50">
+                <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=400&q=80"
+                  alt="Black Beef Burger"
+                  class="h-20 w-20 shrink-0 rounded-full bg-slate-100 object-cover sm:h-24 sm:w-24 lg:h-28 lg:w-28"
+                  loading="lazy" />
+              </div>
+              <div class="w-full text-left">
+                <p class="text-xs text-gray-400">Phones</p>
+                <h4 class="mt-1 text-sm font-bold text-gray-900">Iphone 8x plus</h4>
+                <div class="mt-1.5 flex items-center text-xs"><span class="text-amber-400">★★★★★</span><span
+                    class="ml-1.5 text-[11px] text-gray-500">5.0 (24 reviews)</span></div>
+                <div class="mt-2"><span class="text-base font-bold text-blue-600">$420.00</span></div>
+              </div>
+            </article>
+
+            <!-- 5 Wireless Headphones -->
+            <article
+              class="relative flex flex-col items-center justify-between rounded-xl border border-gray-100 bg-white p-6 text-center shadow-sm transition hover:shadow-md">
+              <div class="mb-4 flex h-44 w-full items-center justify-center rounded-lg bg-gray-50">
+                <img src="https://images.unsplash.com/photo-1561758033-d89a9ad46330?auto=format&fit=crop&w=400&q=80"
+                  alt="Big Metty"
+                  class="h-20 w-20 shrink-0 rounded-full bg-slate-100 object-cover sm:h-24 sm:w-24 lg:h-28 lg:w-28"
+                  loading="lazy" />
+              </div>
+              <div class="w-full text-left">
+                <p class="text-xs text-gray-400">Headphones</p>
+                <h4 class="mt-1 text-sm font-bold text-gray-900">Wireless Headphones</h4>
+                <div class="mt-1.5 flex items-center text-xs"><span class="text-amber-400">★★★★</span><span
+                    class="text-gray-200">★</span><span class="ml-1.5 text-[11px] text-gray-500">4.5 (9 reviews)</span>
+                </div>
+                <div class="mt-2"><span class="text-base font-bold text-blue-600">$392.00</span></div>
+              </div>
+            </article>
+
+            <!-- 6 Mini Bluetooth Speaker -->
+            <article
+              class="relative flex flex-col items-center justify-between rounded-xl border border-gray-100 bg-white p-6 text-center shadow-sm transition hover:shadow-md">
+              <div class="mb-4 flex h-44 w-full items-center justify-center rounded-lg bg-gray-50">
+                <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?auto=format&fit=crop&w=400&q=80"
+                  alt="Beef Cheese Burger"
+                  class="h-20 w-20 shrink-0 rounded-full bg-slate-100 object-cover sm:h-24 sm:w-24 lg:h-28 lg:w-28"
+                  loading="lazy" />
+              </div>
+              <div class="w-full text-left">
+                <p class="text-xs text-gray-400">Speakers</p>
+                <h4 class="mt-1 text-sm font-bold text-gray-900">Mini Bluetooth Speaker</h4>
+                <div class="mt-1.5 flex items-center text-xs"><span class="text-amber-400">★★★</span><span
+                    class="text-gray-200">★★</span><span class="ml-1.5 text-[11px] text-gray-500">3.5 (5 reviews)</span>
+                </div>
+                <div class="mt-2 flex items-baseline gap-2"><span
+                    class="text-base font-bold text-blue-600">$212.00</span><span class="text-[11px] text-gray-400">Sold
+                    out</span></div>
+              </div>
+            </article>
+
+            <!-- 7 Wireless Headphones SALE -->
+            <article
+              class="relative flex flex-col items-center justify-between rounded-xl border border-gray-100 bg-white p-6 text-center shadow-sm transition hover:shadow-md">
+              <span
+                class="absolute left-3 top-3 rounded bg-red-500 px-2 py-0.5 text-[10px] font-bold text-white">SALE</span>
+              <div class="mb-4 flex h-44 w-full items-center justify-center rounded-lg bg-gray-50">
+                <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?auto=format&fit=crop&w=400&q=80"
+                  alt="Beef Cheese Burger"
+                  class="h-20 w-20 shrink-0 rounded-full bg-slate-100 object-cover sm:h-24 sm:w-24 lg:h-28 lg:w-28"
+                  loading="lazy" />
+              </div>
+              <div class="w-full text-left">
+                <p class="text-xs text-gray-400">Headphones</p>
+                <h4 class="mt-1 text-sm font-bold text-gray-900">Wireless Headphones</h4>
+                <div class="mt-1.5 flex items-center text-xs"><span class="text-amber-400">★★★★</span><span
+                    class="text-gray-200">★</span><span class="ml-1.5 text-[11px] text-gray-500">4.0 (7 reviews)</span>
+                </div>
+                <div class="mt-2"><span class="text-base font-bold text-blue-600">$344.00</span></div>
+              </div>
+            </article>
+
+            <!-- 8 Apple MacBook Air -->
+            <article
+              class="relative flex flex-col items-center justify-between rounded-xl border border-gray-100 bg-white p-6 text-center shadow-sm transition hover:shadow-md">
+              <div class="mb-4 flex h-44 w-full items-center justify-center rounded-lg bg-gray-50">
+                <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?auto=format&fit=crop&w=400&q=80"
+                  alt="Beef Cheese Burger"
+                  class="h-20 w-20 shrink-0 rounded-full bg-slate-100 object-cover sm:h-24 sm:w-24 lg:h-28 lg:w-28"
+                  loading="lazy" />
+              </div>
+              <div class="w-full text-left">
+                <p class="text-xs text-gray-400">Laptops</p>
+                <h4 class="mt-1 text-sm font-bold text-gray-900">Apple MacBook Air</h4>
+                <div class="mt-1.5 flex items-center text-xs"><span class="text-amber-400">★★★★</span><span
+                    class="text-gray-200">★</span><span class="ml-1.5 text-[11px] text-gray-500">4.5 (18 reviews)</span>
+                </div>
+                <div class="mt-2"><span class="text-base font-bold text-blue-600">$899.00</span></div>
+              </div>
+            </article>
+
+            <!-- 9 Bluetooth Speaker -30% -->
+            <article
+              class="relative flex flex-col items-center justify-between rounded-xl border border-gray-100 bg-white p-6 text-center shadow-sm transition hover:shadow-md">
+              <span
+                class="absolute left-3 top-3 rounded bg-green-500 px-2 py-0.5 text-[10px] font-bold text-white">-30%</span>
+              <div class="mb-4 flex h-44 w-full items-center justify-center rounded-lg bg-gray-50">
+                <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?auto=format&fit=crop&w=400&q=80"
+                  alt="Beef Cheese Burger"
+                  class="h-20 w-20 shrink-0 rounded-full bg-slate-100 object-cover sm:h-24 sm:w-24 lg:h-28 lg:w-28"
+                  loading="lazy" />
+              </div>
+              <div class="w-full text-left">
+                <p class="text-xs text-gray-400">Speakers</p>
+                <h4 class="mt-1 text-sm font-bold text-gray-900">Bluetooth Speaker</h4>
+                <div class="mt-1.5 flex items-center text-xs"><span class="text-amber-400">★★★★</span><span
+                    class="text-gray-200">★</span><span class="ml-1.5 text-[11px] text-gray-500">4.5 (8 reviews)</span>
+                </div>
+                <div class="mt-2 flex items-baseline gap-2"><span
+                    class="text-base font-bold text-blue-600">$275.00</span><span
+                    class="text-xs text-gray-400 line-through">$320.00</span></div>
+              </div>
+            </article>
+
+          </div>
+
+          <nav class="mt-10 flex justify-center gap-2 text-xs" aria-label="Pagination">
+            <button class="h-8 w-8 rounded-md border border-gray-200 bg-white text-gray-600 hover:bg-gray-50">1</button>
+            <button aria-current="page" class="h-8 w-8 rounded-md bg-blue-600 text-white">2</button>
+            <button class="h-8 w-8 rounded-md border border-gray-200 bg-white text-gray-600 hover:bg-gray-50">3</button>
+            <button aria-label="Next"
+              class="h-8 w-8 rounded-md border border-gray-200 bg-white text-gray-600 hover:bg-gray-50">&gt;</button>
+            <button aria-label="Last"
+              class="h-8 w-8 rounded-md border border-gray-200 bg-white text-gray-600 hover:bg-gray-50">&raquo;</button>
+          </nav>
+        </div>
+      </div>
+      <p id="menu-count" class="mb-5 text-xs text-slate-400" aria-live="polite"></p>
+      <div id="menu-grid" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
+      <p id="menu-empty" class="hidden py-16 text-center text-slate-400">Nothing matches your search. Try another word
+        or category.</p>
+    </section>
+  </main>
+{% endblock %}

@@ -1,0 +1,143 @@
+{% extends 'layouts/base_auth.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+  {% set label_class = 'form-label mb-1 block text-xs font-medium' %}
+  {% set input_class = 'w-full rounded-xl border border-slate-200 bg-white py-2.5 pl-10 text-sm outline-none transition focus:border-[#f4511e] focus:ring-2 focus:ring-[#f4511e]/20 aria-[invalid=true]:border-red-500' %}
+  {% set icon_class = 'pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400' %}
+  {% set error_class = 'mt-0.5 text-xs leading-tight text-red-600' %}
+
+  <main class="flex min-h-screen items-center justify-center pt-16">
+    <section class="w-full max-w-5xl px-4 py-4 sm:px-6" aria-labelledby="auth-heading">
+      <div class="grid gap-4 md:grid-cols-2 md:gap-6">
+
+        <section class="hero-card relative hidden flex-col justify-end overflow-hidden rounded-3xl md:flex">
+          <img src="{{asset('images/register.jpg')}}" alt="" class="absolute inset-0 h-full w-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-tr from-orange-500/80 via-orange-600/30 to-transparent"></div>
+          <div class="relative p-8 text-white">
+            <h2 class="text-3xl font-semibold leading-tight">Hungry already?</h2>
+            <p class="mt-2 max-w-xs text-sm text-white/90">Create your account in less than a minute and track every order.</p>
+          </div>
+        </section>
+
+        {# Form card #}
+        <section class="rounded-3xl bg-[#faf6f0] p-5 md:p-6">
+          <h2 id="auth-heading" class="mb-4 text-2xl font-semibold tracking-tight">Create an account</h2>
+
+          {% for flash_error in app.flashes('verify_email_error') %}
+            <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+          {% endfor %}
+          {{ form_errors(registrationForm) }}
+
+          {{ form_start(registrationForm, {'attr': {'class': 'space-y-3', 'data-auth': 'register', 'novalidate': 'novalidate'}}) }}
+
+            {# Row 1: First name + Last name #}
+            <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              <div class="min-w-0">
+                {{ form_label(registrationForm.firstname, 'First name', {'label_attr': {'class': label_class}}) }}
+                <div class="relative">
+                  <svg class="{{ icon_class }}" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+                  {{ form_widget(registrationForm.firstname, {'attr': {'class': input_class ~ ' pr-3', 'placeholder': 'John', 'autocomplete': 'given-name'}}) }}
+                </div>
+                <div class="{{ error_class }}">{{ form_errors(registrationForm.firstname) }}</div>
+              </div>
+
+              <div class="min-w-0">
+                {{ form_label(registrationForm.lastname, 'Last name', {'label_attr': {'class': label_class}}) }}
+                <div class="relative">
+                  <svg class="{{ icon_class }}" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+                  {{ form_widget(registrationForm.lastname, {'attr': {'class': input_class ~ ' pr-3', 'placeholder': 'Doe', 'autocomplete': 'family-name'}}) }}
+                </div>
+                <div class="{{ error_class }}">{{ form_errors(registrationForm.lastname) }}</div>
+              </div>
+            </div>
+
+            {# Row 2: Email (full width) #}
+            <div>
+              {{ form_label(registrationForm.email, 'Email', {'label_attr': {'class': label_class}}) }}
+              <div class="relative">
+                <svg class="{{ icon_class }}" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                {{ form_widget(registrationForm.email, {'attr': {'class': input_class ~ ' pr-3', 'placeholder': 'you@example.com', 'autocomplete': 'email'}}) }}
+              </div>
+              <div class="{{ error_class }}">{{ form_errors(registrationForm.email) }}</div>
+            </div>
+
+            {# Row 3: Phone + Address #}
+            <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              <div class="min-w-0">
+                {{ form_label(registrationForm.phone, 'Phone', {'label_attr': {'class': label_class}}) }}
+                <div class="relative">
+                  <svg class="{{ icon_class }}" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  {{ form_widget(registrationForm.phone, {'attr': {'class': input_class ~ ' pr-3', 'placeholder': '+123 456 789', 'autocomplete': 'tel'}}) }}
+                </div>
+                <div class="{{ error_class }}">{{ form_errors(registrationForm.phone) }}</div>
+              </div>
+
+              <div class="min-w-0">
+                {{ form_label(registrationForm.address, 'Address', {'label_attr': {'class': label_class}}) }}
+                <div class="relative">
+                  <svg class="{{ icon_class }}" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  {{ form_widget(registrationForm.address, {'attr': {'class': input_class ~ ' pr-3', 'placeholder': '123 Main Street', 'autocomplete': 'street-address'}}) }}
+                </div>
+                <div class="{{ error_class }}">{{ form_errors(registrationForm.address) }}</div>
+              </div>
+            </div>
+
+            {# Row 4: Password + Confirm #}
+            <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              <div class="min-w-0">
+                {{ form_label(registrationForm.plainPassword.first, 'Password', {'label_attr': {'class': label_class}}) }}
+                <div class="relative">
+                  <svg class="{{ icon_class }}" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+                  {{ form_widget(registrationForm.plainPassword.first, {'attr': {'class': input_class ~ ' pr-14', 'placeholder': 'Min. 8 characters', 'autocomplete': 'new-password'}}) }}
+                  <button type="button" data-toggle-pw="{{ registrationForm.plainPassword.first.vars.id }}" class="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-semibold text-[#f4511e]">Show</button>
+                </div>
+                <div class="{{ error_class }}">{{ form_errors(registrationForm.plainPassword.first) }}</div>
+              </div>
+
+              <div class="min-w-0">
+                {{ form_label(registrationForm.plainPassword.second, 'Confirm password', {'label_attr': {'class': label_class}}) }}
+                <div class="relative">
+                  <svg class="{{ icon_class }}" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+                  {{ form_widget(registrationForm.plainPassword.second, {'attr': {'class': input_class ~ ' pr-14', 'placeholder': 'Repeat password', 'autocomplete': 'new-password'}}) }}
+                  <button type="button" data-toggle-pw="{{ registrationForm.plainPassword.second.vars.id }}" class="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-semibold text-[#f4511e]">Show</button>
+                </div>
+                <div class="{{ error_class }}">{{ form_errors(registrationForm.plainPassword.second) }}</div>
+              </div>
+            </div>
+
+            {# Terms #}
+            <div>
+              <div class="flex items-start gap-2 text-xs text-slate-600">
+                {{ form_widget(registrationForm.agreeTerms, {'attr': {'class': 'mt-0.5 h-4 w-4 accent-[#f4511e]'}}) }}
+                <label for="{{ registrationForm.agreeTerms.vars.id }}">
+                  I agree to the <a href="#" class="font-semibold text-[#f4511e] hover:underline">Terms &amp; Conditions</a> and <a href="#" class="font-semibold text-[#f4511e] hover:underline">Privacy Policy</a>.
+                </label>
+              </div>
+              <div class="{{ error_class }}">{{ form_errors(registrationForm.agreeTerms) }}</div>
+            </div>
+
+            <button
+                type="submit"
+                class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#f4511e] px-6 py-2.5 text-sm font-semibold text-white shadow-md transition hover:bg-[#d9400f] active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f4511e]"
+            >Create account</button>
+
+          {{ form_end(registrationForm) }}
+
+          <p class="mt-4 text-center text-sm text-slate-600">
+            Already have an account? <a href="{{path('app_login')}}" class="font-semibold text-[#f4511e] hover:underline">Log in</a>
+          </p>
+        </section>
+      </div>
+    </section>
+  </main>
+
+<script>
+    document.querySelectorAll("[data-toggle-pw]").forEach((b) => b.addEventListener("click", () => {
+      const i = document.getElementById(b.dataset.togglePw);
+      const show = i.type === "password"; i.type = show ? "text" : "password";
+      b.textContent = show ? "Hide" : "Show";
+    }));
+</script>
+{% endblock %}
